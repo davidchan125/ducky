@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+}
+
+.card-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+}
+
+.card-grid-square {
+    cursor: pointer;
+}
+
+.card-grid-square-icon {
+    width: 5rem;
+    opacity: 0;
+    transition: opacity 250ms linear;
+}
+
+.card-grid-square-icon.reveal {
+    opacity: 1;
+}
