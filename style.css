@@ -2,6 +2,46 @@ html, body {
     height: 100%;
 }
 
+@keyframes bounce {
+    from {
+        transform: translateY(0.2rem);
+    }
+    to {
+        transform: translateY(-0.2rem);
+    }
+}
+
+@keyframes bounce-small {
+    from {
+        transform: translateY(0.1rem);
+    }
+    to {
+        transform: translateY(-0.1rem);
+    }
+}
+
+.btn-quack-again {
+    position: relative;
+    opacity: 0;
+    transition: opacity 250ms linear;
+}
+
+.btn-quack-again:focus.btn-quack-again::after,
+.btn-quack-again:hover.btn-quack-again::after {
+    position: absolute;
+    content: "quack";
+    bottom: 0;
+    font-size: 0.5rem;
+}
+
+.quacking-text {
+    text-align: center;
+    font-size: 1.3rem;
+    max-width: 27ch;
+    opacity: 0;
+    transition: opacity 250ms linear;
+}
+
 .card-grid {
     display: grid;
     gap: 1rem;
@@ -19,6 +59,21 @@ html, body {
     transition: opacity 250ms linear;
 }
 
-.card-grid-square-icon.reveal {
+.reveal {
     opacity: 1;
+}
+
+.bounce {
+    animation-duration: 0.4s;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.bounce.bounce-small {
+    animation-name: bounce-small;
+}
+
+.faster {
+    animation-duration: 0.2s;
 }
